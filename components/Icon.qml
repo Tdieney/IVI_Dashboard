@@ -15,7 +15,7 @@ Button {
         horizontalAlignment: Image.AlignHCenter
         verticalAlignment: Image.AlignVCenter
         source: control.icon.source
-        scale: control.pressed ? 0.9 : control.scale
+        scale: control.pressed ? (0.9 * control.scale) : control.scale
         Behavior on scale { NumberAnimation { duration: 200; } }
     }
 

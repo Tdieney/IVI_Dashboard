@@ -3,24 +3,15 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 import Style 1.0
 
-import "qrc:/LayoutManager.js" as Responsive
-
 RowLayout {
     id: root
     property int index: 0
     property int batteryPercentage: 90
-    spacing: 51 * adaptive.getWidthRatio()
-
-    property var adaptive: new Responsive.AdaptiveLayoutManager(1920 , 54, parent.width, parent.height)
-
-    // Component.onCompleted: {
-    //     console.log("height:", parent.height)
-    //     console.log("width:", parent.width)
-    // }
+    spacing: 51 * Style.widthRatio
 
     RowLayout {
         Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-        spacing: 4 * adaptive.getWidthRatio()
+        spacing: 4 * Style.widthRatio
         Text {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             property bool current: root.index === 0
@@ -28,7 +19,7 @@ RowLayout {
             text: "P"
             font.family: "Inter"
             font.bold: Font.Bold
-            font.pixelSize: 18 * adaptive.getHeightRatio()
+            font.pixelSize: 18 * Style.heightRatio
         }
         Text {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -37,7 +28,7 @@ RowLayout {
             text: "R"
             font.family: "Inter"
             font.bold: Font.Bold
-            font.pixelSize: 18 * adaptive.getHeightRatio()
+            font.pixelSize: 18 * Style.heightRatio
         }
         Text {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -46,7 +37,7 @@ RowLayout {
             text: "N"
             font.family: "Inter"
             font.bold: Font.Bold
-            font.pixelSize: 18 * adaptive.getHeightRatio()
+            font.pixelSize: 18 * Style.heightRatio
         }
         Text {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -55,7 +46,7 @@ RowLayout {
             text: "D"
             font.family: "Inter"
             font.bold: Font.Bold
-            font.pixelSize: 18 * adaptive.getHeightRatio()
+            font.pixelSize: 18 * Style.heightRatio
         }
     }
 
@@ -65,7 +56,7 @@ RowLayout {
         Image {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             source: "qrc:/icons/top_header_icons/battery.svg"
-            scale: adaptive.getHeightRatio()
+            scale: Style.heightRatio
         }
         Text {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
@@ -73,7 +64,7 @@ RowLayout {
             text: qsTr("%0%").arg(batteryPercentage)
             font.family: "Inter"
             font.bold: Font.Bold
-            font.pixelSize: 18 * adaptive.getHeightRatio()
+            font.pixelSize: 18 * Style.heightRatio
         }
     }
 }

@@ -5,21 +5,25 @@ import Style 1.0
 import QtGraphicalEffects 1.12
 
 Popup {
-    width: 1104
-    height: 445
+    width: 1104 * Style.widthRatio
+    height: 445 * Style.heightRatio
+
+    Component.onCompleted: {
+        console.log("LaunchPadControl initialized with width:", width, "and height:", height)
+    }
     background: Rectangle {
         anchors.fill: parent
-        radius: 9
+        radius: 9 * Style.heightRatio
         color: Style.alphaColor(Style.black,0.8)
     }
 
     contentItem: ColumnLayout {
-        spacing: 8
+        spacing: 8 * Style.heightRatio
         anchors.fill: parent
         RowLayout {
-            Layout.leftMargin: 24
+            Layout.leftMargin: 24 * Style.widthRatio
             Layout.alignment: Qt.AlignTop | Qt.AlignLeft
-            spacing: 24
+            spacing: 24 * Style.widthRatio
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/front-defrost.svg"
@@ -49,15 +53,15 @@ Popup {
 
         Rectangle {
             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-            width: parent.width - 48
-            height: 1
+            width: parent.width - 48 * Style.widthRatio
+            height: 1 * Style.heightRatio
             color: Style.black30
         }
 
         RowLayout {
-            Layout.leftMargin: 24
+            Layout.leftMargin: 24 * Style.widthRatio
             Layout.alignment: Qt.AlignTop | Qt.AlignLeft
-            spacing: 24
+            spacing: 24 * Style.widthRatio
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/dashcam.svg"
@@ -96,13 +100,13 @@ Popup {
         }
 
         RowLayout {
-            Layout.leftMargin: 24
+            Layout.leftMargin: 24 * Style.widthRatio
             Layout.alignment: Qt.AlignTop | Qt.AlignLeft
-            spacing: 24
+            spacing: 24 * Style.widthRatio
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
-                icon.source: "qrc:/icons/app_icons/caraoke.svg"
-                text: "Caraoke"
+                icon.source: "qrc:/icons/app_icons/karaoke.svg"
+                text: "Karaoke"
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter

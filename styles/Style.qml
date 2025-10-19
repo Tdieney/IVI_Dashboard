@@ -32,10 +32,11 @@ QtObject {
         source: "qrc:/fonts/NunitoSans-Regular.ttf"
     }
 
-
     property bool isDark: true
     property bool mapAreaVisible: false
     property string theme: isDark ? "dark" : "light"
+    property real widthRatio: 1.0
+    property real heightRatio: 1.0
 
     function getImageBasedOnTheme() {
         return `qrc:/icons/car_action_icons/${theme}/background_image.png`;
@@ -59,6 +60,10 @@ QtObject {
 
     function getSentryIconBasedOnTheme() {
         return `qrc:/icons/top_header_icons/${theme}/Sentry.svg`;
+    }
+
+    function getSidebarIconBasedOnTheme() {
+        return `qrc:/icons/car_action_icons/${theme}/sidebar.png`;
     }
 
     function alphaColor(color, alpha) {

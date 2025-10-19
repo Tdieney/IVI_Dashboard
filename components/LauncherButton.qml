@@ -7,12 +7,12 @@ Button {
     id: control
     property bool isGlow: false
     property color textColor: Style.white
-    implicitHeight: 128
-    implicitWidth: 128
+    implicitHeight: 128 * Style.heightRatio
+    implicitWidth: 128 * Style.widthRatio
 
     contentItem: ColumnLayout {
         anchors.centerIn: parent
-        spacing: 10
+        spacing: 10 * Style.heightRatio
 
         Item { Layout.fillHeight: true }
 
@@ -21,7 +21,7 @@ Button {
             verticalAlignment: Image.AlignVCenter
             Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
             source: control.icon.source
-            scale: control.pressed ? 0.9 : 1.0
+            scale: control.pressed ? 0.9 * Style.heightRatio : 1.0 * Style.heightRatio
             Behavior on scale { NumberAnimation { duration: 200; } }
         }
 

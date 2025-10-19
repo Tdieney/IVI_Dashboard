@@ -8,13 +8,13 @@ Button {
     id: control
     property string setIcon : ""
     property bool isGlow: false
-    implicitHeight: isGlow ? 50 : 44
-    implicitWidth: isGlow ? 50 : 44
+    implicitHeight: isGlow ? 50 * Style.heightRatio : 44 * Style.heightRatio
+    implicitWidth: isGlow ? 50 * Style.widthRatio : 44 * Style.widthRatio
 
     Image{
         anchors.centerIn: parent
         source: setIcon
-        scale: control.pressed ? 0.9 : 1.0
+        scale: control.pressed ? 0.9 * Style.heightRatio : 1.0 * Style.heightRatio
         Behavior on scale { NumberAnimation { duration: 200; } }
     }
 

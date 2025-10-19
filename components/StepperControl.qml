@@ -12,7 +12,7 @@ Control {
     property string icon: ""
 
     contentItem: RowLayout {
-        spacing: 10
+        spacing: 10 * Style.widthRatio
         anchors.centerIn: parent
         IconButton {
             Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
@@ -28,7 +28,7 @@ Control {
         Text {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             text: value
-            font.pixelSize: 42
+            font.pixelSize: 42 * Style.heightRatio
             font.family: Style.fontFamily
             color: Style.black50
             visible: !icon
@@ -38,6 +38,7 @@ Control {
             visible: icon
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             source: icon
+            scale: 0.3 + 0.7 * Style.heightRatio
         }
 
         IconButton {

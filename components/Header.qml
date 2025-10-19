@@ -3,22 +3,14 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 import Style 1.0
 import QtGraphicalEffects 1.12
-import "qrc:/LayoutManager.js" as Responsive
 
 Item {
-    height: 54 * adaptive.getHeightRatio()
+    height: 54 * Style.heightRatio
     width: parent.width
-
-    property var adaptive: new Responsive.AdaptiveLayoutManager(1920 , 1200, parent.width, parent.height)
-
-    // Component.onCompleted: {
-    //     console.log("height:", parent.height)
-    //     console.log("width:", parent.width)
-    // }
 
     TopLeftControl {
         anchors.left: parent.left
-        anchors.leftMargin: 24 * adaptive.getWidthRatio()
+        anchors.leftMargin: 24 * Style.widthRatio
 
         anchors.verticalCenter: parent.verticalCenter
     }
@@ -30,6 +22,6 @@ Item {
     TopRightControl {
         anchors.right: parent.right
         anchors.verticalCenter: parent.verticalCenter
-        anchors.rightMargin: 24 * adaptive.getWidthRatio()
+        anchors.rightMargin: 24 * Style.widthRatio
     }
 }

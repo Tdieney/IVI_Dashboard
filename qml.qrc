@@ -29,11 +29,15 @@
         <file>components/IconButton.qml</file>
         <file>components/LauncherButton.qml</file>
         <file>components/LaunchPadControl.qml</file>
+        <file>components/NavigationMapHelperScreen.qml</file>
+        <file>components/NavigationMapScreen.qml</file>
         <file>components/StepperControl.qml</file>
         <file>components/TopLeftButtonIconColumn.qml</file>
         <file>components/TopLeftControl.qml</file>
         <file>components/TopMiddleControl.qml</file>
         <file>components/TopRightControl.qml</file>
+        <file>icons/anim_icons/icons8-car.gif</file>
+        <file>icons/anim_icons/icons8-destination.gif</file>
         <file>icons/app_icons/bluetooth.svg</file>
         <file>icons/app_icons/calendar.svg</file>
         <file>icons/app_icons/dashcam.svg</file>
@@ -67,6 +71,8 @@
         <file>icons/car_action_icons/light/navigation.svg</file>
         <file>icons/car_action_icons/light/power.svg</file>
         <file>icons/car_action_icons/light/sidebar.png</file>
+        <file>icons/map/CarMarker.png</file>
+        <file>icons/map/LocationMarker.png</file>
         <file>icons/stepper_icons/left-arrow.svg</file>
         <file>icons/stepper_icons/right-arrow.svg</file>
         <file>icons/top_header_icons/dark/icons.svg</file>
@@ -77,6 +83,13 @@
         <file>icons/top_header_icons/light/Sentry.svg</file>
         <file>icons/top_header_icons/airbag_.svg</file>
         <file>icons/top_header_icons/battery.svg</file>
+        <file>icons/tell_tale_lamp/front_fog_white.svg</file>
+        <file>icons/tell_tale_lamp/Headlight2.svg</file>
+        <file>icons/tell_tale_lamp/Headlights.svg</file>
+        <file>icons/tell_tale_lamp/Icons.svg</file>
+        <file>icons/tell_tale_lamp/Property_Default.svg</file>
+        <file>icons/tell_tale_lamp/Property_Variant2.svg</file>
+        <file>icons/tell_tale_lamp/Seatbelt.svg</file>
         <file>qtquickcontrols2.conf</file>
     </qresource>
 </RCC>

@@ -22,17 +22,30 @@ ApplicationWindow {
     title: qsTr("IVI Main Window")
 
     onWidthChanged: {
-        if(adaptive)
+        if(adaptive) {
             adaptive.updateWindowWidth(root.width)
+            updateStyleRatios()
+        }
     }
 
     onHeightChanged: {
-        if(adaptive)
+        if(adaptive) {
             adaptive.updateWindowHeight(root.height)
+            updateStyleRatios()
+        }
     }
 
     property var adaptive: new Responsive.AdaptiveLayoutManager(1920 , 1200, root.width, root.height)
-
+    
+    // Update Style ratios when window size changes
+    Component.onCompleted: updateStyleRatios()
+    
+    function updateStyleRatios() {
+        Style.widthRatio = adaptive.getWidthRatio()
+        Style.heightRatio = adaptive.getHeightRatio()
+        console.log("Updated Style ratios - Width:", Style.widthRatio, "Height:", Style.heightRatio)
+    }
+    
     FontLoader {
         id: uniTextFont
         source: "qrc:/fonts/Unitext Regular.ttf"
@@ -59,18 +72,18 @@ ApplicationWindow {
                 icon.source: Style.getLockIconBasedOnTheme()
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
-                anchors.verticalCenterOffset: - 350 * adaptive.getHeightRatio()
-                anchors.horizontalCenterOffset: 37 * adaptive.getWidthRatio()
-                scale: 0.35 + 0.5 * adaptive.getHeightRatio()
+                anchors.verticalCenterOffset: - 350 * Style.heightRatio
+                anchors.horizontalCenterOffset: 37 * Style.widthRatio
+                scale: 0.35 + 0.5 * Style.heightRatio
             }
 
             Icon {
                 icon.source: Style.getPowerIconBasedOnTheme()
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
-                anchors.verticalCenterOffset: - 77 * adaptive.getHeightRatio()
-                anchors.horizontalCenterOffset: 550 * adaptive.getWidthRatio()
-                scale: 0.35 + 0.5 * adaptive.getHeightRatio()
+                anchors.verticalCenterOffset: - 77 * Style.heightRatio
+                anchors.horizontalCenterOffset: 550 * Style.widthRatio
+                scale: 0.35 + 0.5 * Style.heightRatio
             }
         }
     }
@@ -85,61 +98,39 @@ ApplicationWindow {
         onOpenLauncher: launcher.open()
     }
 
-//    SwipeView {
-//        id: swipeView
-//        anchors.fill: parent
-//        currentIndex: tabBar.currentIndex
+    TopLeftButtonIconColumn {
+        z: 99
+        anchors.left: parent.left
+        anchors.top: headerLayout.bottom
+        anchors.leftMargin: 18 * Style.widthRatio
+    }
 
-//        HomeScreen {
-//        }
+    RowLayout {
+        id: mapLayout
+        visible: Style.mapAreaVisible
+        spacing: 0
+        anchors.fill: parent
+        Item {
+            Layout.preferredWidth: 580 * Style.widthRatio
+            Layout.fillHeight: true
+            Image {
+                id: sidebarImage
+                anchors.centerIn: parent
+                source: Style.getSidebarIconBasedOnTheme()
+                scale: Style.heightRatio
+            }
+        }
 
-//        Navigation {
-//        }
+        NavigationMapHelperScreen {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            runMenuAnimation: true
+        }
+    }
 
-//        Infotainment {
-//        }
-
-//        VehicleInfo {
-//        }
-
-//        Setting {
-//        }
-//    }
-
-//    footer: Rectangle {
-//        width: parent.width
-//        height: 70
-//        color: Qt.rgba(30/255, 30/255, 30/255, 0.85)
-//        radius: 24
-//        anchors.bottom: parent.bottom
-//        z: 10
-
-//        layer.enabled: true
-
-
-//        TabBar {
-//            id: tabBar
-//            anchors.fill: parent
-//            anchors.margins: 12
-//            background: null
-//            spacing: 24
-//            currentIndex: swipeView.currentIndex
-
-//            TabButton {
-//                text: qsTr("Home Screen")
-//            }
-//            TabButton {
-//                text: qsTr("Navigation")
-//            }
-//            TabButton {
-//                text: qsTr("Infotainment")
-//            }
-//            TabButton {
-//                text: qsTr("Vehicle Info")
-//            }
-//            TabButton {
-//                text: qsTr("Settings")
-//            }
-//        }
-//    }
+    LaunchPadControl {
+        id: launcher
+        y: (root.height - height) / 2 + (footerLayout.height)
+        x: (root.width - width ) / 2
+    }
 }
