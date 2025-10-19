@@ -6,7 +6,7 @@ import QtGraphicalEffects 1.12
 
 Popup {
     width: 1104 * Style.widthRatio
-    height: 445 * Style.heightRatio
+    height: 145 + 300 * Style.heightRatio
 
     Component.onCompleted: {
         console.log("LaunchPadControl initialized with width:", width, "and height:", height)
@@ -28,26 +28,31 @@ Popup {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/front-defrost.svg"
                 text: "Front Defrost"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/rear-defrost.svg"
                 text: "Rear Defrost"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/seat.svg"
                 text: "Left Seat"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/steering-wheel-warmer.svg"
                 text: "Heated Steering"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/wiper.svg"
                 text: "Wipers"
+                font.pixelSize: 16 * Style.heightRatio
             }
         }
 
@@ -66,36 +71,43 @@ Popup {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/dashcam.svg"
                 text: "Dashcam"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/calendar.svg"
                 text: "Calendar"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/messages.svg"
                 text: "Messages"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/zoom.svg"
                 text: "Zoom"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/video.svg"
                 text: "Theater"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/toybox.svg"
                 text: "Toybox"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/spotify.svg"
                 text: "Spotify"
+                font.pixelSize: 16 * Style.heightRatio
             }
         }
 
@@ -107,16 +119,19 @@ Popup {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/karaoke.svg"
                 text: "Karaoke"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/tunein.svg"
                 text: "TuneIn"
+                font.pixelSize: 16 * Style.heightRatio
             }
             LauncherButton {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 icon.source: "qrc:/icons/app_icons/radio.svg"
                 text: "Music"
+                font.pixelSize: 16 * Style.heightRatio
             }
         }
     }
