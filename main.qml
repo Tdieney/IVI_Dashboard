@@ -61,7 +61,7 @@ ApplicationWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.verticalCenterOffset: - 350 * adaptive.getHeightRatio()
                 anchors.horizontalCenterOffset: 37 * adaptive.getWidthRatio()
-                scale: 0.5 + 0.5 * adaptive.getHeightRatio()
+                scale: 0.35 + 0.5 * adaptive.getHeightRatio()
             }
 
             Icon {
@@ -70,7 +70,7 @@ ApplicationWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.verticalCenterOffset: - 77 * adaptive.getHeightRatio()
                 anchors.horizontalCenterOffset: 550 * adaptive.getWidthRatio()
-                scale: 0.5 + 0.5 * adaptive.getHeightRatio()
+                scale: 0.35 + 0.5 * adaptive.getHeightRatio()
             }
         }
     }

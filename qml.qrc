@@ -60,12 +60,12 @@
         <file>icons/car_action_icons/dark/background_image.png</file>
         <file>icons/car_action_icons/dark/lock.svg</file>
         <file>icons/car_action_icons/dark/navigation.svg</file>
-        <file>icons/car_action_icons/dark/Power.svg</file>
+        <file>icons/car_action_icons/dark/power.svg</file>
         <file>icons/car_action_icons/dark/sidebar.png</file>
         <file>icons/car_action_icons/light/background_image.png</file>
         <file>icons/car_action_icons/light/lock.svg</file>
         <file>icons/car_action_icons/light/navigation.svg</file>
-        <file>icons/car_action_icons/light/Power.svg</file>
+        <file>icons/car_action_icons/light/power.svg</file>
         <file>icons/car_action_icons/light/sidebar.png</file>
         <file>icons/stepper_icons/left-arrow.svg</file>
         <file>icons/stepper_icons/right-arrow.svg</file>

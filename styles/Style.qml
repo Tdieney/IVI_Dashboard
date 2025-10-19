@@ -50,7 +50,7 @@ QtObject {
     }
 
     function getPowerIconBasedOnTheme() {
-        return `qrc:/icons/car_action_icons/${theme}/Power.svg`;
+        return `qrc:/icons/car_action_icons/${theme}/power.svg`;
     }
 
     function getUserIconBasedOnTheme() {
