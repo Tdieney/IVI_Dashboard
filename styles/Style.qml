@@ -54,7 +54,7 @@ QtObject {
     }
 
     function getUserIconBasedOnTheme() {
-        return `qrc:/icons/car_action_icons/${theme}/icons.svg`;
+        return `qrc:/icons/top_header_icons/${theme}/icons.svg`;
     }
 
     function getSentryIconBasedOnTheme() {

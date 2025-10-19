@@ -8,12 +8,12 @@ import "qrc:/LayoutManager.js" as Responsive
 RowLayout {
     property var adaptive: new Responsive.AdaptiveLayoutManager(1920 , 54, parent.width, parent.height)
 
-    Component.onCompleted: {
-        console.log("height:", parent.height)
-        console.log("width:", parent.width)
-        console.log("height ratio:", adaptive.getHeightRatio())
-        console.log("width ratio:", adaptive.getWidthRatio())
-    }
+    // Component.onCompleted: {
+    //     console.log("height:", parent.height)
+    //     console.log("width:", parent.width)
+    //     console.log("height ratio:", adaptive.getHeightRatio())
+    //     console.log("width ratio:", adaptive.getWidthRatio())
+    // }
     spacing: 48 * adaptive.getWidthRatio()
     property int temp: 72
     property bool airbagOn: false
@@ -21,7 +21,7 @@ RowLayout {
         Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
         text: "12:00pm"
         font.family: "Inter"
-        font.pixelSize: 18
+        font.pixelSize: 18 * adaptive.getHeightRatio()
         font.bold: Font.DemiBold
         color: Style.isDark ? Style.white : Style.black20
     }
@@ -37,7 +37,7 @@ RowLayout {
 
     Control {
         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-        implicitHeight: 38 * adaptive.getHeightRatio()
+        implicitHeight: 52 * adaptive.getHeightRatio()
         background: Rectangle {
             color: Style.isDark ? Style.alphaColor(Style.black,0.55) : Style.black20
             radius: 7 * adaptive.getHeightRatio()
@@ -49,6 +49,7 @@ RowLayout {
                 Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
                 Layout.leftMargin: 10 * adaptive.getWidthRatio()
                 source: "qrc:/icons/top_header_icons/airbag_.svg"
+                scale: 1 * adaptive.getHeightRatio()
             }
             Text {
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter

@@ -4,14 +4,25 @@ import QtQuick.Layouts 1.3
 import Style 1.0
 import QtGraphicalEffects 1.12
 
+import "qrc:/LayoutManager.js" as Responsive
+
 Item {
-    height: 120
+    property var adaptive: new Responsive.AdaptiveLayoutManager(1920 , 960, parent.width, parent.height)
+
+    // Component.onCompleted: {
+    //     console.log("height:", parent.height)
+    //     console.log("width:", parent.width)
+    //     console.log("height ratio:", adaptive.getHeightRatio())
+    //     console.log("width ratio:", adaptive.getWidthRatio())
+    // }
+
+    height: 120 * adaptive.getHeightRatio()
     width: parent.width
     signal openLauncher()
     LinearGradient {
         anchors.fill: parent
         start: Qt.point(0, 0)
-        end: Qt.point(0, 1000)
+        end: Qt.point(0, 1000 * adaptive.getHeightRatio())
         gradient: Gradient {
             GradientStop { position: 0.0; color: Style.black }
             GradientStop { position: 1.0; color: Style.black60 }
@@ -23,8 +34,9 @@ Item {
         icon.source: "qrc:/icons/app_icons/model-3.svg"
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
-        anchors.leftMargin: 36
+        anchors.leftMargin: 36 * adaptive.getWidthRatio()
         onClicked: openLauncher()
+        scale: 0.5 + 0.5 * adaptive.getHeightRatio()
     }
 
     Item {
@@ -42,34 +54,41 @@ Item {
     RowLayout {
         id: middleLayout
         anchors.centerIn: parent
-        spacing: 20
+        spacing: 0
 
         Icon{
             icon.source: "qrc:/icons/app_icons/phone.svg"
+            scale: 0.5 + 0.5 * adaptive.getHeightRatio()
         }
 
         Icon{
             icon.source: "qrc:/icons/app_icons/radio.svg"
+            scale: 0.5 + 0.5 * adaptive.getHeightRatio()
         }
 
         Icon{
             icon.source: "qrc:/icons/app_icons/bluetooth.svg"
+            scale: 0.5 + 0.5 * adaptive.getHeightRatio()
         }
 
         Icon{
             icon.source: "qrc:/icons/app_icons/spotify.svg"
+            scale: 0.5 + 0.5 * adaptive.getHeightRatio()
         }
 
         Icon{
             icon.source: "qrc:/icons/app_icons/dashcam.svg"
+            scale: 0.5 + 0.5 * adaptive.getHeightRatio()
         }
 
         Icon{
             icon.source: "qrc:/icons/app_icons/video.svg"
+            scale: 0.5 + 0.5 * adaptive.getHeightRatio()
         }
 
         Icon{
             icon.source: "qrc:/icons/app_icons/tunein.svg"
+            scale: 0.5 + 0.5 * adaptive.getHeightRatio()
         }
     }
 
@@ -89,7 +108,7 @@ Item {
         id: rightControl
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
-        anchors.rightMargin: 36
+        anchors.rightMargin: 36 * adaptive.getWidthRatio()
         value: 72
         icon: "qrc:/icons/app_icons/volume.svg"
     }

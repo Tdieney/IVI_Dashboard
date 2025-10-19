@@ -65,9 +65,7 @@ RowLayout {
         Image {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             source: "qrc:/icons/top_header_icons/battery.svg"
-            width: Style.iconSizeLarge  // Fixed 32px
-            height: Style.iconSizeLarge // Fixed 32px
-            fillMode: Image.PreserveAspectFit
+            scale: adaptive.getHeightRatio()
         }
         Text {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter

@@ -9,19 +9,13 @@ Button {
     id: control
     property string setIcon : ""
     property bool isGlow: false
-    property int iconSize: 32  // Fixed size for all icons
     scale: 1
-    width: iconSize
-    height: iconSize
 
     contentItem: Image {
         horizontalAlignment: Image.AlignHCenter
         verticalAlignment: Image.AlignVCenter
         source: control.icon.source
-        width: control.iconSize
-        height: control.iconSize
-        fillMode: Image.PreserveAspectFit
-        scale: control.pressed ? 0.9 : 1.0
+        scale: control.pressed ? 0.9 : control.scale
         Behavior on scale { NumberAnimation { duration: 200; } }
     }
 
