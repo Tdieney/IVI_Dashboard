@@ -14,7 +14,7 @@ Popup {
     }
     background: Rectangle {
         anchors.fill: parent
-        radius: 9 * Style.heightRatio
+        radius: 10 * Style.heightRatio
         color: Style.alphaColor(Style.black,0.8)
     }
 

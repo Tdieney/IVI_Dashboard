@@ -51,46 +51,15 @@ ApplicationWindow {
         source: "qrc:/fonts/Unitext Regular.ttf"
     }
 
-    background: Loader {
+    SwipeView {
+        id: swipeView
         anchors.fill: parent
-        sourceComponent: Style.mapAreaVisible ? backgroundRect : backgroundImage
-    }
 
-    Component {
-        id: backgroundRect
-        Rectangle {
-            color: "#171717"
-            anchors.fill: parent
+        HomeScreen {
         }
-    }
 
-    Component {
-        id: backgroundImage
-        Image {
-            source: Style.getImageBasedOnTheme()
-            Icon {
-                icon.source: Style.getLockIconBasedOnTheme()
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.verticalCenterOffset: - 350 * Style.heightRatio
-                anchors.horizontalCenterOffset: 37 * Style.widthRatio
-                scale: 0.35 + 0.5 * Style.heightRatio
-            }
-
-            Icon {
-                icon.source: Style.getPowerIconBasedOnTheme()
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.verticalCenterOffset: - 77 * Style.heightRatio
-                anchors.horizontalCenterOffset: 550 * Style.widthRatio
-                scale: 0.35 + 0.5 * Style.heightRatio
-            }
+        Setting {
         }
-    }
-
-    Header {
-        z: 99
-        id: headerLayout
     }
 
     footer: Footer{
@@ -98,43 +67,17 @@ ApplicationWindow {
         onLauncherClicked: {
             if (launcher.visible) {
                 launcher.close()
-                // Debug
-                console.log("Launcher closed")
             } else {
                 launcher.open()
-                // Debug
-                console.log("Launcher opened")
-            }
-        }
-    }
-
-    TopLeftButtonIconColumn {
-        z: 99
-        anchors.left: parent.left
-        anchors.top: headerLayout.bottom
-        anchors.leftMargin: 18 * Style.widthRatio
-    }
-
-    RowLayout {
-        id: mapLayout
-        visible: Style.mapAreaVisible
-        spacing: 0
-        anchors.fill: parent
-        Item {
-            Layout.preferredWidth: 580 * Style.widthRatio
-            Layout.fillHeight: true
-            Image {
-                id: sidebarImage
-                anchors.centerIn: parent
-                source: Style.getSidebarIconBasedOnTheme()
-                scale: Style.heightRatio
             }
         }
 
-        NavigationMapHelperScreen {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            runMenuAnimation: true
+        onSettingClicked: {
+            if (swipeView.currentIndex == 0) {
+                swipeView.currentIndex = 1
+            } else {
+                swipeView.currentIndex = 0
+            }
         }
     }
 

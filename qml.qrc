@@ -2,11 +2,8 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>LayoutManager.js</file>
-        <file>pages/HomeScreen.ui.qml</file>
-        <file>pages/Navigation.ui.qml</file>
-        <file>pages/Infotainment.ui.qml</file>
-        <file>pages/VehicleInfo.ui.qml</file>
-        <file>pages/Setting.ui.qml</file>
+        <file>pages/HomeScreen.qml</file>
+        <file>pages/Setting.qml</file>
         <file>fonts/Unitext Regular.ttf</file>
         <file>fonts/NunitoSans-Black.ttf</file>
         <file>fonts/NunitoSans-BlackItalic.ttf</file>
@@ -73,6 +70,7 @@
         <file>icons/car_action_icons/light/power.svg</file>
         <file>icons/car_action_icons/light/sidebar.png</file>
         <file>icons/map/CarMarker.png</file>
+        <file>icons/map/DestinationMarker.png</file>
         <file>icons/map/LocationMarker.png</file>
         <file>icons/stepper_icons/left-arrow.svg</file>
         <file>icons/stepper_icons/right-arrow.svg</file>
