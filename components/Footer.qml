@@ -7,7 +7,7 @@ import QtGraphicalEffects 1.12
 Item {
     height: 120 * Style.heightRatio
     width: parent.width
-    signal openLauncher()
+    signal launcherClicked()
     LinearGradient {
         anchors.fill: parent
         start: Qt.point(0, 0)
@@ -24,7 +24,7 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         anchors.leftMargin: 36 * Style.widthRatio
-        onClicked: openLauncher()
+        onClicked: launcherClicked()
         scale: 0.5 + 0.5 * Style.heightRatio
     }
 
@@ -125,24 +125,41 @@ Item {
         }
     }
 
-    Item {
-        height: parent.height
+    // Item {
+    //     height: parent.height
+    //     anchors.right: rightControl.left
+    //     anchors.left: middleLayout.right
+    //     anchors.verticalCenter: parent.verticalCenter
+
+    //     StepperControl {
+    //         anchors.centerIn: parent
+    //         value: 72
+    //     }
+    // }
+    StepperControl {
+        id: volumeControl
         anchors.right: rightControl.left
         anchors.left: middleLayout.right
         anchors.verticalCenter: parent.verticalCenter
-
-        StepperControl {
-            anchors.centerIn: parent
-            value: 72
-        }
-    }
-
-    StepperControl {
-        id: rightControl
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.right: parent.right
-        anchors.rightMargin: 36 * Style.widthRatio
         value: 72
         icon: "qrc:/icons/app_icons/volume.svg"
     }
+
+    Icon {
+        id: settingIcon
+        icon.source: "qrc:/icons/app_icons/setting.svg"
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.right: parent.right
+        anchors.rightMargin: 36 * Style.widthRatio
+        onClicked: launcherClicked()
+        scale: 0.5 + 0.5 * Style.heightRatio
+    }
+    // StepperControl {
+    //     id: rightControl
+    //     anchors.verticalCenter: parent.verticalCenter
+    //     anchors.right: parent.right
+    //     anchors.rightMargin: 36 * Style.widthRatio
+    //     value: 72
+    //     icon: "qrc:/icons/app_icons/volume.svg"
+    // }
 }

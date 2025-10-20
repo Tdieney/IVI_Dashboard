@@ -95,7 +95,17 @@ ApplicationWindow {
 
     footer: Footer{
         id: footerLayout
-        onOpenLauncher: launcher.open()
+        onLauncherClicked: {
+            if (launcher.visible) {
+                launcher.close()
+                // Debug
+                console.log("Launcher closed")
+            } else {
+                launcher.open()
+                // Debug
+                console.log("Launcher opened")
+            }
+        }
     }
 
     TopLeftButtonIconColumn {

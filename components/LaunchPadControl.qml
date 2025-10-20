@@ -7,6 +7,7 @@ import QtGraphicalEffects 1.12
 Popup {
     width: 1104 * Style.widthRatio
     height: 145 + 300 * Style.heightRatio
+    closePolicy: Popup.NoAutoClose
 
     Component.onCompleted: {
         console.log("LaunchPadControl initialized with width:", width, "and height:", height)
