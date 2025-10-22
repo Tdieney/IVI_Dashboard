@@ -9,13 +9,13 @@ Popup {
     height: 145 + 300 * Style.heightRatio
     closePolicy: Popup.NoAutoClose
 
-    Component.onCompleted: {
-        console.log("LaunchPadControl initialized with width:", width, "and height:", height)
-    }
+    // Component.onCompleted: {
+    //     console.log("LaunchPadControl initialized with width:", width, "and height:", height)
+    // }
     background: Rectangle {
         anchors.fill: parent
         radius: 10 * Style.heightRatio
-        color: Style.alphaColor(Style.black,0.8)
+        color: Style.alphaColor(Style.black, 0.8)
     }
 
     contentItem: ColumnLayout {
