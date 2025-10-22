@@ -28,6 +28,7 @@
         <file>components/LaunchPadControl.qml</file>
         <file>components/NavigationMapHelperScreen.qml</file>
         <file>components/NavigationMapScreen.qml</file>
+        <file>components/SettingSideBar.qml</file>
         <file>components/StepperControl.qml</file>
         <file>components/TopLeftButtonIconColumn.qml</file>
         <file>components/TopLeftControl.qml</file>
@@ -72,6 +73,8 @@
         <file>icons/map/CarMarker.png</file>
         <file>icons/map/DestinationMarker.png</file>
         <file>icons/map/LocationMarker.png</file>
+        <file>icons/settings/EAE_FOTA_Logo.png</file>
+        <file>icons/settings/EAE_Logo.png</file>
         <file>icons/stepper_icons/left-arrow.svg</file>
         <file>icons/stepper_icons/right-arrow.svg</file>
         <file>icons/top_header_icons/dark/icons.svg</file>

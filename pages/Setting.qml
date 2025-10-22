@@ -26,8 +26,12 @@ Page {
     }
 
     Header {
-        z: 99
         id: headerLayout
+        z: 99
     }
 
+    SettingSideBar {
+        id: settingSideBar
+        z: 98
+    }
 }

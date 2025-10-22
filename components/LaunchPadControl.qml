@@ -59,8 +59,9 @@ Popup {
 
         Rectangle {
             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-            width: parent.width - 48 * Style.widthRatio
+            width: parent.width / 2 // Need to be edited between different screen ratios
             height: 1 * Style.heightRatio
+            // Component.onCompleted: console.log("Separator width:", width, "height:", height)
             color: Style.black30
         }
 

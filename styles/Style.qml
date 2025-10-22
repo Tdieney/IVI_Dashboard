@@ -22,8 +22,12 @@ QtObject {
     readonly property color white: "#FFFFFF"
     readonly property string fontFamily: nunitoSans.name
 
-    readonly property color gptDarkBg: "#181818"
-    readonly property color gptLightBg: "#F9F9F9"
+    readonly property color iconInDark: "#A2A3A5"
+    readonly property color iconInLight: "#757575"
+    readonly property color gptDarkSideBar: "#181818"
+    readonly property color gptLightSideBar: "#F9F9F9"
+    readonly property color gptDarkBg: "#212121"
+    readonly property color gptLightBg: "#FFFFFF"
     readonly property color gptDarkBox: "#242424"
     readonly property color gptLightBox: "#eaeaea"
 

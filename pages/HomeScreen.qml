@@ -81,28 +81,6 @@ Page {
             }
         }
 
-        // Rectangle {
-        //     // Sidebar image have fixed dimensions: width = 730, height = 1180. scale it to match the height of the home screen
-        //     width: (730 * (1200 * Style.heightRatio
-        //     height: 1200 * Style.heightRatio
-        //     x: 0
-        //     y: 0
-        //     color: "red"
-
-        //     // Debug
-        //     Component.onCompleted: {
-        //         console.log("Sidebar dimensions - Width:", width, "Height:", height)
-        //     }
-
-        //     Image {
-        //         id: highBeamImage
-        //         source: "qrc:/images/high_beam.png"
-        //         visible: false
-        //         anchors.fill: parent
-        //         fillMode: Image.PreserveAspectFit
-        //     }
-        // }
-
         NavigationMapHelperScreen {
             Layout.fillWidth: true
             Layout.fillHeight: true
