@@ -25,11 +25,6 @@ Page {
         }
     }
 
-    Header {
-        id: headerLayout
-        z: 99
-    }
-
     SettingSideBar {
         id: settingSideBar
         z: 98

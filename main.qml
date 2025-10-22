@@ -57,6 +57,13 @@ ApplicationWindow {
         id: swipeView
         anchors.fill: parent
 
+        onCurrentIndexChanged: {
+            // console.log("SwipeView currentIndex changed to:", currentIndex)
+            if (swipeView.currentIndex != 0) {
+                launcher.close()
+            }
+        }
+
         HomeScreen {
         }
 
@@ -64,28 +71,14 @@ ApplicationWindow {
         }
     }
 
-    footer: Footer{
-        id: footerLayout
-        onLauncherClicked: {
-            if (launcher.visible) {
-                launcher.close()
-            } else {
-                launcher.open()
-            }
-        }
-
-        onSettingClicked: {
-            if (swipeView.currentIndex == 0) {
-                swipeView.currentIndex = 1
-            } else {
-                swipeView.currentIndex = 0
-            }
-        }
+    Header {
+        id: headerLayout
+        z: 99
     }
 
     LaunchPadControl {
         id: launcher
-        y: (root.height - height) / 2 + (footerLayout.height)
+        y: (root.height - height) / 2 + (160 * Style.heightRatio)
         x: (root.width - width ) / 2
     }
 }

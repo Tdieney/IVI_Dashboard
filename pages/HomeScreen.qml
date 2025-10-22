@@ -53,15 +53,10 @@ Page {
         }
     }
 
-    Header {
-        z: 99
-        id: headerLayout
-    }
-
     TopLeftButtonIconColumn {
         z: 99
-        anchors.left: parent.left
-        anchors.top: headerLayout.bottom
+        x: 14 * Style.widthRatio
+        y: 54 * Style.heightRatio
         anchors.leftMargin: 18 * Style.widthRatio
     }
 
@@ -72,7 +67,8 @@ Page {
         anchors.fill: parent
         Item {
             Layout.preferredWidth: 630 * (1200 * Style.widthRatio / 1180)
-            Layout.fillHeight: true
+            Layout.fillHeight: 1200 * Style.heightRatio
+            // Layout.fillHeight: true
             Image {
                 id: sidebarImage
                 anchors.centerIn: parent
@@ -85,6 +81,25 @@ Page {
             Layout.fillWidth: true
             Layout.fillHeight: true
             runMenuAnimation: true
+        }
+    }
+
+    footer: Footer{
+        id: footerLayout
+        onLauncherClicked: {
+            if (launcher.visible) {
+                launcher.close()
+            } else {
+                launcher.open()
+            }
+        }
+
+        onSettingClicked: {
+            if (swipeView.currentIndex == 0) {
+                swipeView.currentIndex = 1
+            } else {
+                swipeView.currentIndex = 0
+            }
         }
     }
 }
