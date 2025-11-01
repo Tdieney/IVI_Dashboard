@@ -66,20 +66,21 @@ Page {
         spacing: 0
         anchors.fill: parent
         Item {
-            Layout.preferredWidth: 630 * (1200 * Style.widthRatio / 1180)
+            Layout.preferredWidth: 730 * Style.widthRatio
             Layout.fillHeight: 1200 * Style.heightRatio
             // Layout.fillHeight: true
             Image {
                 id: sidebarImage
                 anchors.centerIn: parent
                 source: Style.getSidebarIconBasedOnTheme()
-                scale: 1.05 * Style.widthRatio // 1200 / 1180
+                scale: 1.17 * Style.widthRatio // 1200 / 1180
             }
         }
 
         NavigationMapHelperScreen {
             Layout.fillWidth: true
-            Layout.fillHeight: true
+            // Layout.fillHeight: 1200 * Style.heightRatio
+            Layout.preferredHeight: 1200 * Style.heightRatio
             runMenuAnimation: true
         }
     }
